@@ -127,7 +127,12 @@
        button.addEventListener('click', ()=>{
             let inputNbr = input.value.toString();
             if(checkNumber(inputNbr)){
-                output.textContent = parseInt(input.value.toString(), 2);
+                let outputNumber = parseInt(input.value.toString(), 2);
+                if(outputNumber.toString() == 'NaN'){
+                    alert("Only number values are allowed!");
+                }else{
+                    output.textContent = outputNumber.toString();
+                }
             }else{
                 alert("Number should only contain 0 & 1 digits as it requires binary digits only!");
                 output.textContent = "";
